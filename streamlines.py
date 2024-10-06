@@ -9,10 +9,10 @@ max_val = 10
 vf = VectorField(n, min_val, max_val)
 
 # Set the vector field (Swirl, Turbulent, or any other)
-vf.set_radial(strength=1)
+# vf.set_radial(strength=1)
 # vf.set_swirl(strength=1)
 # vf.set_lin_flow(strength=10)
-# vf.set_turbulent(strength=1)
+vf.set_turbulent(strength=1)
 
 # Generate the vector components and magnitude
 X, Y, Z = vf.x, vf.y, vf.z
@@ -40,7 +40,7 @@ fig = go.Figure(data=go.Streamtube(
     colorscale='Viridis',
     cmin=magnitude.min(),
     cmax=magnitude.max(),
-    sizeref=0.1,
+    sizeref=0.3,
     showscale=True,
     colorbar=dict(title='Magnitude'),
     maxdisplayed=100

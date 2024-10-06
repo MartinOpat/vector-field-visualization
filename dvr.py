@@ -10,10 +10,10 @@ vf = VectorField(n, min_val, max_val)
 
 
 # Set the vector field
-vf.set_radial(strength=1)
+# vf.set_radial(strength=1)
 # vf.set_swirl(strength=1)
 # vf.set_lin_flow(strength=1)
-# vf.set_turbulent(strength=1)
+vf.set_turbulent(strength=1)
 
 # Create the dvr plot
 magnitude = vf.get_field_magnitude()

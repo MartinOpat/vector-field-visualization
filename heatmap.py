@@ -9,10 +9,10 @@ max_val = 10
 vf = VectorField(n, min_val, max_val)
 
 # Set the vector field (Swirl in this case)
-vf.set_radial(strength=1)
+# vf.set_radial(strength=1)
 # vf.set_swirl(strength=1)
 # vf.set_lin_flow(strength=10)
-# vf.set_turbulent(strength=1)
+vf.set_turbulent(strength=1)
 
 # Compute the magnitude of the vector field at each point
 magnitude = vf.get_field_magnitude()

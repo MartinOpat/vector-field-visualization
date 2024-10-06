@@ -54,14 +54,14 @@ fig.update_layout(
         zaxis_title='Z-axis',
 
         # Corner
-        # camera=dict(
-        #     eye=dict(x=1.5, y=1.5, z=1.5)
-        # )
+        camera=dict(
+            eye=dict(x=1.5, y=1.5, z=1.5)
+        )
 
         # Top
-        camera=dict(
-            eye=dict(x=0, y=0, z=2)
-        )
+        # camera=dict(
+        #     eye=dict(x=0, y=0, z=2)
+        # )
     ),
     # title="3D Vector Field Visualization with Streamtubes (Magnitude Coloring)"
 )

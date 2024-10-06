@@ -10,10 +10,10 @@ vf = VectorField(n, min_val, max_val)
 
 
 # Set the vector field
-# vf.set_radial(strength=1)
-# vf.set_swirl(strength=10)
+vf.set_radial(strength=1)
+# vf.set_swirl(strength=1)
 # vf.set_lin_flow(strength=1)
-vf.set_turbulent(strength=1)
+# vf.set_turbulent(strength=1)
 
 # Create the dvr plot
 magnitude = vf.get_field_magnitude()
@@ -24,15 +24,18 @@ mlab.colorbar(title='Magnitude', orientation='vertical')
 mlab.view(azimuth=45, elevation=60, distance=15)
 
 # Add axes with labels and scale, and adjust font size
-# axes = mlab.axes(vol, xlabel='X', ylabel='Y', zlabel='Z', color=(0.7, 0.7, 0.7))
-# axes.label_text_property.font_size = 2  # Smaller font size
-# axes.title_text_property.font_size = 4  # Smaller font size
+axes = mlab.axes(vol, xlabel='X', ylabel='Y', zlabel='Z', color=(0.7, 0.7, 0.7))
+axes.label_text_property.font_size = 2  # Smaller font size
+axes.title_text_property.font_size = 4  # Smaller font size
 
 # Increase the number of grid lines
-# axes.axes.x_axis_visibility = True
-# axes.axes.y_axis_visibility = True
-# axes.axes.z_axis_visibility = True
-# axes.axes.number_of_labels = 5  # More detailed grid
+axes.axes.x_axis_visibility = True
+axes.axes.y_axis_visibility = True
+axes.axes.z_axis_visibility = True
+# axes.axes.number_of_labels = 0  # More detailed grid
+
+# Add red dot at (-8, 8, 5)
+mlab.points3d(9, 2, 6, color=(1, 0, 0), scale_factor=0.5)
 
 # Show the plot
 mlab.show()

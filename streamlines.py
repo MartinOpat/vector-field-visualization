@@ -3,15 +3,15 @@ import plotly.graph_objects as go
 from vectorFields import VectorField  # Assuming this is your custom class
 
 # Create a vector field
-n = 20  # Adjust grid density as needed
+n = 50  # Adjust grid density as needed
 min_val = -10
 max_val = 10
 vf = VectorField(n, min_val, max_val)
 
 # Set the vector field (Swirl, Turbulent, or any other)
-# vf.set_radial(strength=1)
-vf.set_swirl(strength=10)
-# vf.set_lin_flow(strength=1)
+vf.set_radial(strength=1)
+# vf.set_swirl(strength=1)
+# vf.set_lin_flow(strength=10)
 # vf.set_turbulent(strength=1)
 
 # Generate the vector components and magnitude
@@ -52,12 +52,29 @@ fig.update_layout(
         xaxis_title='X-axis',
         yaxis_title='Y-axis',
         zaxis_title='Z-axis',
+
+        # Corner
+        # camera=dict(
+        #     eye=dict(x=1.5, y=1.5, z=1.5)
+        # )
+
+        # Top
         camera=dict(
-            eye=dict(x=1.25, y=1.25, z=1.25)
+            eye=dict(x=0, y=0, z=2)
         )
     ),
-    title="3D Vector Field Visualization with Streamtubes (Magnitude Coloring)"
+    # title="3D Vector Field Visualization with Streamtubes (Magnitude Coloring)"
 )
+
+# Add red dot at (-8, 8, 5)
+fig.add_trace(go.Scatter3d(
+    x=[8], y=[-8], z=[5],
+    mode='markers',
+    marker=dict(size=5, color='red')
+))
 
 # Show the interactive plot
 fig.show()
+
+# Save the plot as a png
+fig.write_image("vector_field_magnitude_volume.png")

@@ -9,9 +9,9 @@ max_val = 10
 vf = VectorField(n, min_val, max_val)
 
 # Set the vector field (Swirl in this case)
-# vf.set_radial(strength=1)
-# vf.set_swirl(strength=10)
-vf.set_lin_flow(strength=10)
+vf.set_radial(strength=1)
+# vf.set_swirl(strength=1)
+# vf.set_lin_flow(strength=10)
 # vf.set_turbulent(strength=1)
 
 # Compute the magnitude of the vector field at each point
@@ -37,9 +37,31 @@ fig.update_layout(
         xaxis_title='X',
         yaxis_title='Y',
         zaxis_title='Z',
+
+        # Corner
+        camera=dict(
+            eye=dict(x=1.25, y=1.25, z=1.25)
+        )
+
+        # Top
+        # camera=dict(
+        #     eye=dict(x=0, y=0, z=2)
+        # )
     ),
-    title="Vector Field Magnitude Volume",
+    # title="Vector Field Magnitude Volume",
 )
+
+# Add red dot at (-8, 8, 5)
+fig.add_trace(go.Scatter3d(
+    x=[8], y=[-8], z=[5],
+    mode='markers',
+    marker=dict(size=5, color='green')
+))
+
 
 # Show the interactive plot
 fig.show()
+
+# Save the plot as a png
+fig.write_image("vector_field_magnitude_volume.png")
+

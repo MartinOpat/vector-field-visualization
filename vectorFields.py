@@ -21,10 +21,14 @@ class VectorField:
         self.w = strength * self.z
 
     def set_swirl(self, strength=1):
-        r = np.sqrt(self.x**2 + self.y**2)
-        r = np.where(r == 0, 1e-10, r)
-        self.u = -strength * self.y / r**1.5
-        self.v = strength * self.x / r**1.5
+        # r = np.sqrt(self.x**2 + self.y**2)
+        # r = np.where(r == 0, 1e-10, r)
+        # self.u = -strength * self.y / r**1.5
+        # self.v = strength * self.x / r**1.5
+        # self.w = np.zeros_like(self.z)
+
+        self.u = -strength * self.y
+        self.v = strength * self.x
         self.w = np.zeros_like(self.z)
 
     def set_lin_flow(self, strength=1):

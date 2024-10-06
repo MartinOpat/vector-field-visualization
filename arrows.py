@@ -13,10 +13,10 @@ max_val = 10
 vf = VectorField(n, min_val, max_val)
 
 # Set the vector field
-vf.set_radial(strength=1)
-# vf.set_swirl(strength=10)
-# vf.set_lin_flow(strength=1)
-# vf.set_turbulent(strength=1)
+# vf.set_radial(strength=1)
+# vf.set_swirl(strength=1)
+# vf.set_lin_flow(strength=10)
+vf.set_turbulent(strength=10)
 
 # Create the plot
 fig = mlab.figure(size=(1600, 1200))
@@ -31,7 +31,10 @@ axes.title_text_property.font_size = 1  # Smaller font size
 axes.axes.x_axis_visibility = True
 axes.axes.y_axis_visibility = True
 axes.axes.z_axis_visibility = True
-axes.axes.number_of_labels = 6  # More detailed grid
+axes.axes.number_of_labels = 5  # More detailed grid
+
+# Add red dot at (-8, 8, 5)
+mlab.points3d(8, -8, 5, color=(1, 0, 0), scale_factor=0.5)
 
 # Show the plot
 mlab.show()

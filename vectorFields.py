@@ -49,3 +49,19 @@ class VectorField:
     
     def get_field_magnitude(self):
         return np.sqrt(self.u**2 + self.v**2 + self.w**2)
+    
+    def get_field_at_point(self, x, y, z):
+        # Find the closest point in the grid
+        # x_idx = np.argmin(np.abs(self.x - x))
+        # y_idx = np.argmin(np.abs(self.y - y))
+        # z_idx = np.argmin(np.abs(self.z - z))
+        
+        x_idx = x
+        y_idx = y
+        z_idx = z
+
+        # Return the magnitude and direction of the vector field at the point
+        magnitude = np.sqrt(self.u[x_idx, y_idx, z_idx]**2 + self.v[x_idx, y_idx, z_idx]**2 + self.w[x_idx, y_idx, z_idx]**2)
+        direction = (self.u[x_idx, y_idx, z_idx], self.v[x_idx, y_idx, z_idx], self.w[x_idx, y_idx, z_idx])
+        
+        return magnitude, direction

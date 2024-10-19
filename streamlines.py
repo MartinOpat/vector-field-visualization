@@ -77,4 +77,28 @@ fig.add_trace(go.Scatter3d(
 fig.show()
 
 # Save the plot as a png
-fig.write_image("vector_field_magnitude_volume.png")
+# fig.write_image("vector_field_magnitude_volume.png")
+
+# Display vector field data at red dot
+print("Vector field at (-8, 8, 5):")
+vf_at_point = vf.get_field_at_point(-8, 8, 5)
+print("Magnitude:", vf_at_point[0])
+print("Direction:", vf_at_point[1])
+
+# vals: 
+
+# Magnitude: 12.638240167666153
+# Direction: (np.float64(-6.73469387755102), np.float64(7.142857142857142), np.float64(-7.959183673469388))
+# Goes through the x-y plane
+
+# Magnitude: 9.817153853718933
+# Direction: (np.float64(-7.142857142857142), np.float64(-6.73469387755102), np.float64(0.0))
+# Goes through the y-z plane
+
+# Magnitude: 10.0
+# Direction: (np.float64(10.0), np.float64(0.0), np.float64(0.0))
+# Goes through the z-y plane
+
+# Magnitude: 1.2182408238976326
+# Direction: (np.float64(0.7251092170764161), np.float64(0.9673898740141597), np.float64(0.14994719062549222))
+# Goes through the z-y plane

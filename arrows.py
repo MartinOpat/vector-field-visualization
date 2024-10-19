@@ -36,5 +36,31 @@ axes.axes.number_of_labels = 5  # More detailed grid
 # Add red dot at (-8, 8, 5)
 mlab.points3d(8, -8, 5, color=(1, 0, 0), scale_factor=0.5)
 
+# Display vector field data at red dot
+print("Vector field at (-8, 8, 5):")
+vf_at_point = vf.get_field_at_point(8, -8, 5)
+print("Magnitude:", vf_at_point[0])
+print("Direction:", vf_at_point[1])
+
+
+# vals:
+
+# Magnitude: 9.622504486493764
+# Direction: (np.float64(-5.555555555555555), np.float64(7.777777777777779), np.float64(1.1111111111111107))
+# Goes through the edge parallel to z-axis
+
+# Magnitude: 9.558139185602919
+# Direction: (np.float64(-7.777777777777779), np.float64(-5.555555555555555), np.float64(0.0))
+# Goes through the y-z plane
+
+# Magnitude: 10.0
+# Direction: (np.float64(10.0), np.float64(0.0), np.float64(0.0))
+# Goes through the z-y plane
+
+# Magnitude: 12.674671572798026
+# Direction: (np.float64(9.979850059904724), np.float64(4.002022112211837), np.float64(6.710716152057211))
+# Goes through the z-y plane
+
+
 # Show the plot
 mlab.show()

@@ -58,6 +58,29 @@ fig.add_trace(go.Scatter3d(
     marker=dict(size=5, color='green')
 ))
 
+# Display vector field data at red dot
+print("Vector field at (-8, 8, 5):")
+vf_at_point = vf.get_field_at_point(8, -8, 5)
+print("Magnitude:", vf_at_point[0])
+print("Direction:", vf_at_point[1])
+
+# vals:
+
+# Magnitude: 9.474918388989025
+# Direction: (np.float64(5.172413793103448), np.float64(-4.482758620689655), np.float64(-6.551724137931034))
+# Goes through the y-x plane
+
+# Magnitude: 6.844632152165244
+# Direction: (np.float64(4.482758620689655), np.float64(5.172413793103448), np.float64(0.0))
+# Goes through the y-z plane
+
+# Magnitude: 10.0
+# Direction: (np.float64(10.0), np.float64(0.0), np.float64(0.0))
+# Goes through the z-y plane
+
+# Magnitude: 0.4061714941387695
+# Direction: (np.float64(0.11883834604086019), np.float64(0.322731711647935), np.float64(0.21609482283939008))
+# Goes through the z-y plane
 
 # Show the interactive plot
 fig.show()
